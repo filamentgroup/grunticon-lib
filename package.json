@@ -38,7 +38,7 @@
   "keywords": [],
   "dependencies": {
     "directory-colorfy": "^2.0.3",
-    "directory-encoder": "^0.6.1",
+    "directory-encoder": "^0.7.0",
     "fs-extra": "^0.16.5",
     "handlebars": "^3.0.0",
     "lodash": "^3.5.0",
