@@ -115,6 +115,7 @@
 			done();
 		},
 		onefile: function( test ){
+			test.expect(6);
 			var files = [path.join( __dirname, "files", "bear.svg" )];
 			var output = path.join( __dirname, "output" );
 			var grunticon = new Grunticon( files, output );
@@ -122,7 +123,12 @@
 				if( status === false ){
 					throw new Error( "Something bad happened" );
 				}
-				test.ok( fs.existsSync( path.join( output, "preview.html" ), "preview should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "preview.html" ),        "preview should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "grunticon.loader.js" ), "loader file should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "icons.data.svg.css" ),  "icon css file should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "icons.data.png.css" ),  "icon css file should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "icons.fallback.css" ),  "icon css file should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "png", "bear.png" ),     "png file should have been created" ) );
 
 				test.done();
 			});
