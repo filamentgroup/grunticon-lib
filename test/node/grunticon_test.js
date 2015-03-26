@@ -5,6 +5,7 @@
 
 	var path = require( "path" );
 	var os = require( "os" );
+	var fs = require( "fs-extra" );
 
 	var Grunticon = require( path.join( __dirname, "..", "..", "lib", "grunticon-lib.js" ) );
 
@@ -82,6 +83,49 @@
 			test.equal( grunticon.options.corsEmbed, false );
 
 			test.done();
+		}
+	};
+
+	exports.process = {
+		setUp: function(done) {
+			// setup here if necessary
+			done();
+		},
+		tearDown: function( done ){
+			var output = path.join( __dirname, "output" );
+			var files = fs.readdirSync( output )
+			.map(function( filename ){
+				return path.join( output, filename );
+			});
+
+			var notFiles = files.filter(function(file){
+				return !fs.lstatSync( file ).isFile();
+			});
+
+			files.filter(function(file){
+				return fs.lstatSync( file ).isFile();
+			})
+			.forEach(fs.unlinkSync);
+
+			notFiles.filter(function(file){
+				return fs.lstatSync( file ).isDirectory();
+			})
+			.forEach(fs.removeSync);
+
+			done();
+		},
+		onefile: function( test ){
+			var files = [path.join( __dirname, "files", "bear.svg" )];
+			var output = path.join( __dirname, "output" );
+			var grunticon = new Grunticon( files, output );
+			grunticon.process(function(status){
+				if( status === false ){
+					throw new Error( "Something bad happened" );
+				}
+				test.ok( fs.existsSync( path.join( output, "preview.html" ), "preview should have been created" ) );
+
+				test.done();
+			});
 		}
 	};
 
