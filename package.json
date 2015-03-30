@@ -1,50 +1,51 @@
 {
-  "name": "grunticon-lib",
-  "description": "Stand-alone library for Grunticon",
-  "version": "1.0.0-beta.1",
-  "homepage": "https://github.com/filamentgroup/grunticon-lib",
-  "author": {
-    "name": "Scott Jehl, Jeffrey Lembeck & Filament Group",
-    "email": "hello@filamentgroup.com",
-    "url": "http://www.filamentgroup.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/filamentgroup/grunticon-lib"
-  },
-  "bugs": {
-    "url": "https://github.com/filamentgroup/grunticon-lib/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/filamentgroup/grunticon-lib/blob/master/LICENSE-MIT"
-    }
-  ],
-  "main": "lib/grunticon-lib",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-qunit": "^0.5.2",
-    "grunt-contrib-watch": "~0.5.3"
-  },
-  "keywords": [],
-  "dependencies": {
-    "directory-colorfy": "^2.0.3",
-    "directory-encoder": "^0.7.0",
-    "fs-extra": "^0.16.5",
-    "handlebars": "^3.0.0",
-    "lodash": "^3.5.0",
-    "merge-defaults": "^0.2.1",
-    "svg-to-png": "^2.0.0",
-    "uglify-js": "^2.4.17",
-    "xmldom": "^0.1.19"
-  }
+	"name": "grunticon-lib",
+	"description": "Stand-alone library for Grunticon",
+	"version": "1.0.0-beta.1",
+	"homepage": "https://github.com/filamentgroup/grunticon-lib",
+	"author": {
+		"name": "Scott Jehl, Jeffrey Lembeck & Filament Group",
+		"email": "hello@filamentgroup.com",
+		"url": "http://www.filamentgroup.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/filamentgroup/grunticon-lib"
+	},
+	"bugs": {
+		"url": "https://github.com/filamentgroup/grunticon-lib/issues"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/filamentgroup/grunticon-lib/blob/master/LICENSE-MIT"
+		}
+	],
+	"main": "lib/grunticon-lib",
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"scripts": {
+		"test": "grunt test"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.2",
+		"grunt-contrib-jshint": "~0.6.4",
+		"grunt-contrib-nodeunit": "~0.2.0",
+		"grunt-contrib-qunit": "^0.5.2",
+		"grunt-contrib-watch": "~0.5.3"
+	},
+	"keywords": [],
+	"dependencies": {
+		"directory-colorfy": "^2.0.3",
+		"directory-encoder": "^0.7.0",
+		"fg-loadcss": "^0.1.6",
+		"fs-extra": "^0.16.5",
+		"handlebars": "^3.0.0",
+		"lodash": "^3.5.0",
+		"merge-defaults": "^0.2.1",
+		"svg-to-png": "^2.0.0",
+		"uglify-js": "^2.4.17",
+		"xmldom": "^0.1.19"
+	}
 }
