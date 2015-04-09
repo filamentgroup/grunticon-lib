@@ -175,13 +175,18 @@
 				console.log( "before deep equal" );
 
 				test.deepEqual( actualContents.preview,			expectedContents.preview, "preview should have been created" );
+
+        console.log( "before loader" );
 				test.deepEqual( actualContents.loader,			expectedContents.loader, "loader's contents should match" );
+        console.log( "before svgcss" );
 				test.deepEqual( actualContents.svgcss,			expectedContents.svgcss, "icon svg css file should match" );
+        console.log( "before pngcss" );
 				test.deepEqual( actualContents.pngcss,			expectedContents.pngcss, "icon png css file should match" );
+        console.log( "before fallback css" );
 				test.deepEqual( actualContents.fallbackcss, expectedContents.fallbackcss, "icon fallback file should match" );
+        console.log( "before png buffer compare" );
 				test.deepEqual( Buffer.compare( actualContents.png, expectedContents.png ), 0, "png file should match" );
 
-				console.log( "before test done" );
 
 				test.done();
 			});
