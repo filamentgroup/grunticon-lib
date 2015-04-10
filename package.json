@@ -29,12 +29,11 @@
 		"test": "node node_modules/.bin/grunt test"
 	},
 	"devDependencies": {
-		"grunt": "~0.4.2",
-		"grunt-cli": "^0.1.13",
-		"grunt-contrib-jshint": "~0.6.4",
-		"grunt-contrib-nodeunit": "~0.2.0",
-		"grunt-contrib-qunit": "^0.5.2",
-		"grunt-contrib-watch": "~0.5.3"
+		"grunt": "^0.4.5",
+		"grunt-contrib-jshint": "^0.11.1",
+		"grunt-contrib-nodeunit": "^0.4.1",
+		"grunt-contrib-qunit": "^0.7.0",
+		"grunt-contrib-watch": "^0.6.1"
 	},
 	"keywords": [],
 	"dependencies": {
@@ -42,6 +41,7 @@
 		"directory-encoder": "^0.7.0",
 		"fg-loadcss": "^0.1.6",
 		"fs-extra": "^0.16.5",
+		"grunt-cli": "^0.1.13",
 		"handlebars": "^3.0.0",
 		"lodash": "^3.5.0",
 		"merge-defaults": "^0.2.1",
