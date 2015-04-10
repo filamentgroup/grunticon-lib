@@ -26,10 +26,11 @@
 		"node": ">= 0.10.0"
 	},
 	"scripts": {
-		"test": "grunt test"
+		"test": "node node_modules/.bin/grunt test"
 	},
 	"devDependencies": {
 		"grunt": "~0.4.2",
+		"grunt-cli": "^0.1.13",
 		"grunt-contrib-jshint": "~0.6.4",
 		"grunt-contrib-nodeunit": "~0.2.0",
 		"grunt-contrib-qunit": "^0.5.2",
