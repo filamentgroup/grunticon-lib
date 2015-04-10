@@ -127,12 +127,12 @@
 					test.done();
 				}
 
-				test.ok( fs.existsSync( path.join( output, "preview.html" ),				"preview should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "preview.html" ),        "preview should have been created" ) );
 				test.ok( fs.existsSync( path.join( output, "grunticon.loader.js" ), "loader file should have been created" ) );
-				test.ok( fs.existsSync( path.join( output, "icons.data.svg.css" ),	"icon css file should have been created" ) );
-				test.ok( fs.existsSync( path.join( output, "icons.data.png.css" ),	"icon css file should have been created" ) );
-				test.ok( fs.existsSync( path.join( output, "icons.fallback.css" ),	"icon css file should have been created" ) );
-				test.ok( fs.existsSync( path.join( output, "png", "bear.png" ),			"png file should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "icons.data.svg.css" ),  "icon css file should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "icons.data.png.css" ),  "icon css file should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "icons.fallback.css" ),  "icon css file should have been created" ) );
+				test.ok( fs.existsSync( path.join( output, "png", "bear.png" ),     "png file should have been created" ) );
 
 				test.done();
 			});
@@ -144,12 +144,12 @@
 			var expected = path.join( __dirname, "expected" );
 
 			var expectedContents = {
-				preview:		 fs.readFileSync( path.join( expected, "preview.html" ) ).toString( "utf-8" ),
-				loader:			 fs.readFileSync( path.join( expected, "grunticon.loader.js" ) ).toString( "utf-8" ),
-				svgcss:			 fs.readFileSync( path.join( expected, "icons.data.svg.css" ) ).toString( "utf-8" ),
-				pngcss:			 fs.readFileSync( path.join( expected, "icons.data.png.css" ) ).toString( "utf-8" ),
+				preview:     fs.readFileSync( path.join( expected, "preview.html" ) ).toString( "utf-8" ),
+				loader:      fs.readFileSync( path.join( expected, "grunticon.loader.js" ) ).toString( "utf-8" ),
+				svgcss:      fs.readFileSync( path.join( expected, "icons.data.svg.css" ) ).toString( "utf-8" ),
+				pngcss:      fs.readFileSync( path.join( expected, "icons.data.png.css" ) ).toString( "utf-8" ),
 				fallbackcss: fs.readFileSync( path.join( expected, "icons.fallback.css" ) ).toString( "utf-8" ),
-				png:				 fs.readFileSync( path.join( expected, "png", "bear.png" ) )
+				png:         fs.readFileSync( path.join( expected, "png", "bear.png" ) )
 			};
 
 
@@ -161,30 +161,22 @@
 					test.done();
 				}
 
-				console.log( "before actual contents object" );
 
 				var actualContents = {
-					preview:		 fs.readFileSync( path.join( output, "preview.html" ) ).toString( "utf-8" ),
-					loader:			 fs.readFileSync( path.join( output, "grunticon.loader.js" ) ).toString( "utf-8" ),
-					svgcss:			 fs.readFileSync( path.join( output, "icons.data.svg.css" ) ).toString( "utf-8" ),
-					pngcss:			 fs.readFileSync( path.join( output, "icons.data.png.css" ) ).toString( "utf-8" ),
+					preview:     fs.readFileSync( path.join( output, "preview.html" ) ).toString( "utf-8" ),
+					loader:      fs.readFileSync( path.join( output, "grunticon.loader.js" ) ).toString( "utf-8" ),
+					svgcss:      fs.readFileSync( path.join( output, "icons.data.svg.css" ) ).toString( "utf-8" ),
+					pngcss:      fs.readFileSync( path.join( output, "icons.data.png.css" ) ).toString( "utf-8" ),
 					fallbackcss: fs.readFileSync( path.join( output, "icons.fallback.css" ) ).toString( "utf-8" ),
-					png:				 fs.readFileSync( path.join( output, "png", "bear.png" ) )
+					png:         fs.readFileSync( path.join( output, "png", "bear.png" ) )
 				};
 
-				console.log( "before deep equal" );
 
-				test.deepEqual( actualContents.preview,			expectedContents.preview, "preview should have been created" );
-
-        console.log( "before loader" );
-				test.deepEqual( actualContents.loader,			expectedContents.loader, "loader's contents should match" );
-        console.log( "before svgcss" );
-				test.deepEqual( actualContents.svgcss,			expectedContents.svgcss, "icon svg css file should match" );
-        console.log( "before pngcss" );
-				test.deepEqual( actualContents.pngcss,			expectedContents.pngcss, "icon png css file should match" );
-        console.log( "before fallback css" );
-				test.deepEqual( actualContents.fallbackcss, expectedContents.fallbackcss, "icon fallback file should match" );
-        console.log( "before png buffer compare" );
+				test.deepEqual( actualContents.preview,             expectedContents.preview, "preview should have been created" );
+				test.deepEqual( actualContents.loader,              expectedContents.loader, "loader's contents should match" );
+				test.deepEqual( actualContents.svgcss,              expectedContents.svgcss, "icon svg css file should match" );
+				test.deepEqual( actualContents.pngcss,              expectedContents.pngcss, "icon png css file should match" );
+				test.deepEqual( actualContents.fallbackcss,         expectedContents.fallbackcss, "icon fallback file should match" );
 				test.deepEqual( Buffer.compare( actualContents.png, expectedContents.png ), 0, "png file should match" );
 
 
