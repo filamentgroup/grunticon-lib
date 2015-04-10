@@ -1,7 +1,7 @@
 {
 	"name": "grunticon-lib",
 	"description": "Stand-alone library for Grunticon",
-	"version": "1.0.0-beta.1",
+	"version": "1.0.0",
 	"homepage": "https://github.com/filamentgroup/grunticon-lib",
 	"author": {
 		"name": "Scott Jehl, Jeffrey Lembeck & Filament Group",
