@@ -42,11 +42,10 @@ grunticon.process(callback);
 ### Required Parameters
 
 #### listOfFiles
-Type: `Array` or `String`
+Type: `Array`
 
-Grunticon's constructor will either take an array of files or a String to a
-directory you'd like read for its first argument. These will be the files
-processed.
+Grunticon's constructor will either take an array of files you'd like read for its first argument.
+These will be the files processed.
 
 #### destination
 Type: `String`
