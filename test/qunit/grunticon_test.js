@@ -164,10 +164,16 @@
 
 	asyncTest( 'grunticon.embedComplete fires when embedSVG completes its embed', function(){
 		expect(1);
+		var old;
 		var embedComplete = function(){
 			ok( true, "Embed complete" );
+			window.grunticon.method = old;
 			start();
 		};
+
+		var old = window.grunticon.method;
+		window.grunticon.method = "svg";
+		window.grunticon.href = "./files/icons.data.svg.css";
 		window.grunticon.embedSVG( embedComplete );
 	});
 

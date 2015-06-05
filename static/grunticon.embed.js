@@ -101,6 +101,7 @@
 		}
 		ready(function(){
 			embedIcons( getIcons( getCSS( grunticon.href ) ) );
+
 			if( typeof callback === "function" ){
 				callback();
 			}
@@ -113,5 +114,4 @@
 	grunticon.ready = ready;
 	grunticon.svgLoadedCallback = svgLoadedCallback; //TODO DEPRECATED
 	grunticon.embedSVG = svgLoadedCallback;
-
 }(grunticon, this));
