@@ -171,7 +171,7 @@
 			start();
 		};
 
-		var old = window.grunticon.method;
+		old = window.grunticon.method;
 		window.grunticon.method = "svg";
 		window.grunticon.href = "./files/icons.data.svg.css";
 		window.grunticon.embedSVG( embedComplete );
