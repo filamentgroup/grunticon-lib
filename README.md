@@ -39,6 +39,10 @@ var grunticon = new Grunticon( listOfFiles, destination, options );
 grunticon.process(callback);
 ```
 
+### Gulp
+
+If you're a [Gulp](http://gulpjs.com/) user check out [gulpicon](https://github.com/filamentgroup/gulpicon) or simply create your own [task](https://gist.github.com/dcalhoun/e79ad10d518612d70721).
+
 ### Required Parameters
 
 #### listOfFiles
