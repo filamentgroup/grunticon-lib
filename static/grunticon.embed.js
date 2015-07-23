@@ -87,7 +87,7 @@
 			// take the svg markup and embed it into the selected elements
 			for( i = 0; i < filteredElems.length; i++ ){
 				filteredElems[ i ].innerHTML = icons[ iconName ];
-				filteredElems[ i ].style.backgroundImage = "none";
+				filteredElems[ i ].classList.add("hasEmbeddedSVG");
 				filteredElems[ i ].removeAttribute( embedAttr );
 			}
 		}
