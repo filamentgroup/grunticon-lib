@@ -1,12 +1,12 @@
 /*global require:true*/
 /*global __dirname:true*/
-/*global Buffer:true*/
 (function( exports ){
 	'use strict';
 
 	var path = require( "path" );
 	var os = require( "os" );
 	var fs = require( "fs-extra" );
+	var compare = require( "buffer-compare" );
 
 	var Grunticon = require( path.join( __dirname, "..", "..", "lib", "grunticon-lib.js" ) );
 	/*
@@ -201,7 +201,7 @@
 				test.deepEqual( actualContents.svgcss,              expectedContents.svgcss, "icon svg css file should match" );
 				test.deepEqual( actualContents.pngcss,              expectedContents.pngcss, "icon png css file should match" );
 				test.deepEqual( actualContents.fallbackcss,         expectedContents.fallbackcss, "icon fallback file should match" );
-				test.deepEqual( Buffer.compare( actualContents.png, expectedContents.png ), 0, "png file should match" );
+				test.deepEqual( compare( actualContents.png, expectedContents.png ), 0, "png file should match" );
 
 
 				test.done();
