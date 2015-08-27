@@ -4,8 +4,8 @@
   "version": "1.0.2",
   "homepage": "https://github.com/filamentgroup/grunticon-lib",
   "author": {
-    "name": "Scott Jehl, Jeffrey Lembeck & Filament Group",
     "email": "hello@filamentgroup.com",
+    "name": "Scott Jehl, Jeffrey Lembeck & Filament Group",
     "url": "http://www.filamentgroup.com"
   },
   "repository": {
@@ -39,7 +39,7 @@
   "dependencies": {
     "directory-colorfy": "^2.0.5",
     "directory-encoder": "^0.7.0",
-    "fg-loadcss": "^0.1.6",
+    "fg-loadcss": "^0.1.8",
     "fs-extra": "^0.16.5",
     "grunt-cli": "^0.1.13",
     "handlebars": "^3.0.0",
