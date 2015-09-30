@@ -53,7 +53,10 @@
 
 	// embed an icon of a particular name ("icon-foo") in all elements with that icon class
 	// and remove its background image
-	var embedIcons = function(icons){
+	var embedIcons = function(icons, rootNode){
+		// default is to embed icons for all matching nodes in document
+		rootNode = rootNode || document;
+
 		var selectedElems, filteredElems, embedAttr, selector;
 
 		// attr to specify svg embedding
@@ -64,7 +67,7 @@
 
 			try {
 				// get ALL of the elements matching the selector
-				selectedElems = document.querySelectorAll( selector );
+				selectedElems = rootNode.querySelectorAll( selector );
 			} catch (er) {
 				// continue further with embeds even though it failed for this icon
 				continue;
