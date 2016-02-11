@@ -2,7 +2,7 @@
 /*global onloadCSS:true*/
 
 (function(window){
-	var grunticon = function( css, onload ){
+	var grunticon = function( css, onload, before ){
 		"use strict";
 		// expects a css array with 3 items representing CSS paths to datasvg, datapng, urlpng
 		if( !css || css.length !== 3 ){
@@ -37,7 +37,7 @@
 			}
 
 			grunticon.href = href;
-			onloadCSS( loadCSS( href ), onload );
+			onloadCSS( loadCSS( href, before ), onload );
 		};
 
 		img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
