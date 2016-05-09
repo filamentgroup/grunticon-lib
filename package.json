@@ -1,7 +1,7 @@
 {
   "name": "grunticon-lib",
   "description": "Stand-alone library for Grunticon",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "homepage": "https://github.com/filamentgroup/grunticon-lib",
   "author": {
     "email": "hello@filamentgroup.com",
@@ -31,12 +31,12 @@
   },
   "devDependencies": {
     "buffer-compare": "0.0.1",
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-jshint": "^0.11.1",
-    "grunt-contrib-nodeunit": "^0.4.1",
-    "grunt-contrib-qunit": "^0.7.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-qunit": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0"
   },
   "keywords": [],
   "dependencies": {
