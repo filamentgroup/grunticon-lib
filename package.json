@@ -35,7 +35,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "directory-colorfy": "^2.0.5",
+    "directory-colorfy": "^2.1.0",
     "directory-encoder": "^0.7.0",
     "fg-loadcss": "^0.1.8",
     "fs-extra": "^0.16.5",
