@@ -25,11 +25,18 @@
 		return window.document.querySelector( 'link[href$="'+ href +'"]' );
 	};
 
+	var icons;
+
 	// this function can rip the svg markup from the css so we can embed it anywhere
-	var getIcons = function(stylesheet){
+	var getIcons = function(stylesheet, refresh){
+		if( icons && !refresh ){
+			return icons;
+		}
+
+		icons = {};
+
 		// get grunticon stylesheet by its href
-		var icons = {},
-			svgss,
+		var svgss,
 			rules, cssText,
 			iconClass, iconSVGEncoded, iconSVGRaw;
 
