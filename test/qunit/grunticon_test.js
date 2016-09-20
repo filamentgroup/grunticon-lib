@@ -199,7 +199,35 @@
 		window.grunticon.embedSVG( embedComplete );
 	});
 
-  	test( 'icons with custom selector with embed should have an svg element', function() {
+	asyncTest( 'grunticon.embedComplete fires when embedSVG completes its embed for particular elements', function(){
+		expect(3);
+		var old;
+		var embedComplete = function(){
+			ok( true, "Embed complete" );
+			window.grunticon.method = old;
+			start();
+
+			var custChildren;
+
+			// elements inside the child-embeds element should get svg
+			custChildren = document
+				.querySelectorAll(".child-embeds .icon-bear.embed > svg");
+			equal(custChildren.length, 1);
+
+			// embeds outside the child-embeds selector should remain untouched
+			custChildren = document
+				.querySelectorAll("#qunit-fixture > .icon-bear.embed > svg");
+			equal(custChildren.length, 0);
+		};
+
+		old = window.grunticon.method;
+		window.grunticon.method = "svg";
+		window.grunticon.href = "./files/icons.data.svg.css";
+		window.grunticon.embedSVG( document.querySelector('.child-embeds'), embedComplete );
+	});
+
+
+	test( 'icons with custom selector with embed should have an svg element', function() {
 		var svg = bearSVG;
 		var name = ".custom-selector-icon-bear, .icon-bear";
 
@@ -208,7 +236,7 @@
 
 		window.grunticon.embedIcons(icons);
 
-		var custChildren = document.querySelectorAll(".custom-selector-icon-bear.embed > svg");
+		var custChildren = document.querySelectorAll("#qunit-fixture > .custom-selector-icon-bear.embed > svg");
 		equal(custChildren.length, 1);
 	});
 
@@ -221,8 +249,21 @@
 
 		window.grunticon.embedIcons(icons);
 
-		var normalChildren = document.querySelectorAll(".custom-selector-icon-bear.no-embed > svg");
+		var normalChildren = document.querySelectorAll("#qunit-fixture > .custom-selector-icon-bear.no-embed > svg");
 		equal(normalChildren.length, 0);
+	});
+
+	test( 'elements with embed when parent is passed should have an svg element', function() {
+		var svg = bearSVG;
+		var name = ".custom-selector-icon-bear, .icon-bear";
+
+		var icons = {};
+		icons["grunticon:" + name] = svg;
+
+		window.grunticon.embedIcons(document.querySelector('.child-embeds'), icons);
+
+		var custChildren = document.querySelectorAll(".child-embeds .custom-selector-icon-bear.embed > svg");
+		equal(custChildren.length, 1);
 	});
 
 	/**
