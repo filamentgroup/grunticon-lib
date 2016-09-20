@@ -25,11 +25,18 @@
 		return window.document.querySelector( 'link[href$="'+ href +'"]' );
 	};
 
+	var icons;
+
 	// this function can rip the svg markup from the css so we can embed it anywhere
-	var getIcons = function(stylesheet){
+	var getIcons = function(stylesheet, refresh){
+		if( icons && !refresh ){
+			return icons;
+		}
+
+		icons = {};
+
 		// get grunticon stylesheet by its href
-		var icons = {},
-			svgss,
+		var svgss,
 			rules, cssText,
 			iconClass, iconSVGEncoded, iconSVGRaw;
 
@@ -53,8 +60,15 @@
 
 	// embed an icon of a particular name ("icon-foo") in all elements with that icon class
 	// and remove its background image
-	var embedIcons = function(icons){
-		var selectedElems, filteredElems, embedAttr, selector;
+	var embedIcons = function(iconsOrElement, icons){
+		var parentElem, selectedElems, filteredElems, embedAttr, selector;
+
+		if( !icons ){
+			icons = iconsOrElement;
+			parentElem = document;
+		} else {
+			parentElem = iconsOrElement;
+		}
 
 		// attr to specify svg embedding
 		embedAttr = "data-grunticon-embed";
@@ -64,7 +78,7 @@
 
 			try {
 				// get ALL of the elements matching the selector
-				selectedElems = document.querySelectorAll( selector );
+				selectedElems = parentElem.querySelectorAll( selector );
 			} catch (er) {
 				// continue further with embeds even though it failed for this icon
 				continue;
@@ -95,15 +109,19 @@
 		return filteredElems;
 	};
 
-	var svgLoadedCallback = function(callback){
+	var svgLoadedCallback = function(callbackOrElement, callback){
 		if( grunticon.method !== "svg" ){
 			return;
 		}
 		ready(function(){
-			embedIcons( getIcons( getCSS( grunticon.href ) ) );
+			var icons = getIcons( getCSS( grunticon.href ) );
 
 			if( typeof callback === "function" ){
+				embedIcons( callbackOrElement, icons );
 				callback();
+			} else if ( typeof callbackOrElement === "function" ){
+				embedIcons( icons );
+				callbackOrElement();
 			}
 		});
 	};
