@@ -371,13 +371,24 @@ in this way:
 ```
 
 #### embedIcons
-Arguments: `Object`
+Arguments: `DOM Element` | `Object`, `Object`?
 Returns: `NodeList`
 
-Takes icons in the object format outputted by `getIcons` and then queries the page for all icons with the
-`data-grunticon-embed` attribute. For each of these that it finds, it places the SVG contents associated with
-the relevant selector in the icons. It then returns the NodeList of all of the elements that had SVGs embedded
-in them.
+Takes icons in the object format outputted by `getIcons` and then queries the
+page for all icons with the `data-grunticon-embed` attribute. For each of these
+that it finds, it places the SVG contents associated with the relevant selector
+in the icons. It then returns the NodeList of all of the elements that had SVGs
+embedded in them.
+
+```javascript
+window.grunticon.embedIcons(getIcons(...));
+```
+
+This function can also be targeted at a particular DOM node. For example, when scripting in the page replaces DOM nodes that have embedded SVG:
+
+```javascript
+window.grunticon.embedIcons(document.querySelector('.replaced'), getIcons(...));
+```
 
 #### ready
 Arguments: `Function`
@@ -386,22 +397,33 @@ Returns: None
 An alternative to listening for the `DOMContentLoaded` event. Takes a function as a callback and calls the function
 when the DOM is ready.
 
-#### svgLoadedCallback
-Arguments: `Function`
+### svgLoadedCallback
+
+** NOTE ** `svgLoadedCallback` has been deprecated in favor of `embedSVG`. 
+
+#### embedSVG
+Arguments: `DOM Element` | `Function`, `Function`?
 Returns: None
 
-Uses the above methods to call:
-```
-var svgLoadedCallback = function( embedComplete ){
-  ready(function(){
-    embedIcons(getIcons(grunticon.href));
-    embedComplete();
-  });
-}
+If `embedComplete` is defined, the loader will call it when SVG embedding is
+complete. This is true for both local and CORS embedding. So if you need to run
+logic after SVG markup is appended to the DOM, just pass a callback to
+`grunticon.svgLoadedCallback` or `grunticon.svgLoadedCORSCallback`.
+
+```javascript
+window.grunticon.embedSVG(function(){
+  console.log("embed complete!");
+});
 ```
 
-If `embedComplete` is defined, the loader will call it when SVG embedding is complete. This is true for both local and CORS embedding. So if you need to run logic after SVG markup is appended to the DOM, just pass a callback to `grunticon.svgLoadedCallback` or `grunticon.svgLoadedCORSCallback`.
+Alternately you can target a particular element, for example, when it's replaced
+in the DOM:
 
+```javascript
+window.grunticon.embedSVG(document.querySelector('.replaced'), function(){
+  console.log("embed complete!");
+});
+```
 
 ### Cross-domain SVG Embedding Methods
 
