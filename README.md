@@ -359,15 +359,26 @@ Returns: `Object`
 Fetch a stylesheet `link` by its `href`.
 
 #### getIcons
-Arguments: `String`
+Arguments: `String`, `Boolean`?
 Returns: `Object`
 
-Takes a stylesheet node (`link` or `style`) and returns all of the icon selectors and the svgs contained within it in an object formatted
-in this way:
+Takes a stylesheet node (`link` or `style`) and returns all of the icon selectors and the svgs contained within it in an object formatted in this way:
 ```
 {
   grunticon:selector: "SVG Content in String"
 }
+```
+
+**NOTE** The return value of this function is cached unless `true` is passed as a second argument:
+
+```javascript
+var icons = window.grunticon.getIcons(...);
+console.log(icons.foo);        // => undefined
+icons.foo = "bar";
+window.gruntIcon(...);
+console.log(icons.foo);        // => bar
+window.gruntIcon(..., true);
+console.log(icons.foo);        // => undefined
 ```
 
 #### embedIcons
