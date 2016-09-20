@@ -399,7 +399,7 @@ when the DOM is ready.
 
 ### svgLoadedCallback
 
-** NOTE ** `svgLoadedCallback` has been deprecated in favor of `embedSVG`. 
+**NOTE** `svgLoadedCallback` has been deprecated in favor of `embedSVG`. 
 
 #### embedSVG
 Arguments: `DOM Element` | `Function`, `Function`?
