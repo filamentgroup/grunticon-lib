@@ -116,11 +116,17 @@
 		ready(function(){
 			var icons = getIcons( getCSS( grunticon.href ) );
 
+			// if a callback was passed we assume the first param was
+			// an element otherwise we just embed the icons
 			if( typeof callback === "function" ){
 				embedIcons( callbackOrElement, icons );
 				callback();
-			} else if ( typeof callbackOrElement === "function" ){
+			} else {
 				embedIcons( icons );
+			}
+
+			// if the first argument was a callback we call it after embedding the icons
+			if ( typeof callbackOrElement === "function" ){
 				callbackOrElement();
 			}
 		});

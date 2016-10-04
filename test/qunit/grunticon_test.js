@@ -226,6 +226,29 @@
 		window.grunticon.embedSVG( document.querySelector('.child-embeds'), embedComplete );
 	});
 
+	test( 'grunticon.embedSVG works without arguments', function(){
+		expect(2);
+		var old;
+
+		old = window.grunticon.method;
+		window.grunticon.method = "svg";
+		window.grunticon.href = "./files/icons.data.svg.css";
+		window.grunticon.embedSVG();
+		window.grunticon.method = old;
+
+		var custChildren;
+
+		// elements inside the child-embeds element should get svg
+		custChildren = document
+			.querySelectorAll(".child-embeds .icon-bear.embed > svg");
+		equal(custChildren.length, 1);
+
+		// embeds outside the child-embeds selector should remain untouched
+		custChildren = document
+			.querySelectorAll("#qunit-fixture > .icon-bear.embed > svg");
+		equal(custChildren.length, 1);
+	});
+
 
 	test( 'icons with custom selector with embed should have an svg element', function() {
 		var svg = bearSVG;
