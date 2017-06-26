@@ -74,7 +74,7 @@
 			test.equal( grunticon.options.pngfolder, "png" );
 			test.equal( grunticon.options.pngpath, "" );
 			test.equal( grunticon.options.template, "" );
-			test.equal( grunticon.options.tmpPath, os.tmpDir() );
+			test.equal( grunticon.options.tmpPath, os.tmpdir() );
 			test.equal( grunticon.options.tmpDir, "grunticon-tmp" );
 			test.equal( grunticon.options.previewTemplate, path.join( __dirname, "..", "..", "static", "preview.hbs" ) );
 			test.equal( grunticon.options.compressPNG, false );

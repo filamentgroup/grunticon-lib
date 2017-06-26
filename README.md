@@ -251,7 +251,7 @@ Takes a path to the template that will be used for the preview.html. Example of 
 
 #### options.tmpPath
 Type: `String`
-Default value: `os.tmpDir()`
+Default value: `os.tmpdir()`
 
 Let's you specify an absolute tmp-path (`options.tmpDir` will still be appended).
 
