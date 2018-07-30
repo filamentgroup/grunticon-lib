@@ -51,6 +51,9 @@
 					callback();
 				});
 			}
+
+			// TODO fail loudly with an exception, the href is wrong or the link/meta
+			// is missing
 		});
 	};
 
