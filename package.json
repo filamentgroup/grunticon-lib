@@ -18,7 +18,7 @@
   "license": "MIT",
   "main": "lib/grunticon-lib",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4"
   },
   "scripts": {
     "test": "grunt test",
