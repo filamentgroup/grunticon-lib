@@ -38,7 +38,7 @@
     "directory-colorfy": "^2.2.1",
     "directory-encoder": "^0.9.2",
     "fg-loadcss": "^2.1.0",
-    "fs-extra": "^0.16.5",
+    "fs-extra": "^7.0.1",
     "handlebars": "^4.0.11",
     "lodash": "^4.17.11",
     "merge-defaults": "^0.2.1",
