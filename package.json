@@ -43,7 +43,7 @@
     "lodash": "^4.17.11",
     "merge-defaults": "^0.2.1",
     "svg-to-png": "^4.0.0",
-    "uglify-js": "^2.8.29",
+    "uglify-js": "^3.4.9",
     "xmldom": "^0.1.19"
   }
 }
