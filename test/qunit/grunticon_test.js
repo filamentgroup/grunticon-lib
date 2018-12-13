@@ -164,7 +164,7 @@
 	test( 'calling grunticon adds the grunticon class to the html element', function(){
 		expect(1);
 
-		window.grunticon("foo", "bar", "baz");
+		window.grunticon("foo", "bar");
 		ok( document.documentElement.className.match( "grunticon" ) );
 	});
 
