@@ -336,6 +336,11 @@ Only a single file will be generated:
 bear-white.svg
 ```
 
+#### options.verbose
+Type: `Boolean`
+Default value: `true`
+
+Whether or not extra information will be logged to the console.
 
 ### Grunticon Loader Methods
 
