@@ -79,17 +79,21 @@ Default value: `"icons.fallback.css"`
 The name of the generated CSS file containing external png url references.
 
 #### options.previewhtml
-Type: `String`
+Type: `String` or `false`
 Default value: `"preview.html"`
 
 The name of the generated HTML file containing PNG data uris.
 
+A value of `false` will bypass creating this file (added in v2.0.0).
+
 
 #### options.loadersnippet
-Type: `String`
+Type: `String` or `false`
 Default value: `"grunticon.loader.js"`
 
-The name of the generated text file containing the grunticon loading snippet.
+The name of the generated text file containing the grunticon loading snippet. 
+
+A value of `false` will bypass creating this file (added in v2.0.0).
 
 #### options.enhanceSVG
 Type: `Boolean`
