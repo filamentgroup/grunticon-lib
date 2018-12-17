@@ -462,6 +462,11 @@ Returns: None
 
 Uses the above methods to make SVG embedding work when CSS is hosted on another domain. (CORS must be allowed on the external domain.)
 
+## Roadmap
+
+This repository is now using [lodash style issue management](https://twitter.com/samselikoff/status/991395669016436736) for enhancements. This means enhancement issues will now be closed instead of leaving them open.
+
+View [the enhancement backlog here](https://github.com/filamentgroup/grunticon-lib/issues?utf8=%E2%9C%93&q=label%3Aneeds-votes+sort%3Areactions-%2B1-desc+). Don’t forget to upvote the top comment with 👍!
 
 ## Warnings
 * If your files have `#`, `.`, `>`, or any other css selecting character in their names, they will likely be improperly processed.
