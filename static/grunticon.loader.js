@@ -1,7 +1,7 @@
 /*global loadCSS:true*/
 /*global onloadCSS:true*/
 
-(function(window){
+(function(w){
 	var grunticon = function( css, onload, before ){
 		"use strict";
 		// expects a css array with 3 items representing CSS paths to datasvg, datapng, urlpng
@@ -9,12 +9,12 @@
 			return;
 		}
 
-		var navigator = window.navigator;
-		var document = window.document;
-		var Image = window.Image;
+		var navigator = w.navigator;
+		var document = w.document;
+		var Image = w.Image;
 
 		// Thanks Modernizr & Erik Dahlstrom
-		var svg = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect && !!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") && !(window.opera && navigator.userAgent.indexOf('Chrome') === -1) && navigator.userAgent.indexOf('Series40') === -1;
+		var svg = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect && !!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1") && !(w.opera && navigator.userAgent.indexOf('Chrome') === -1) && navigator.userAgent.indexOf('Series40') === -1;
 
 		var img = new Image();
 
@@ -45,5 +45,5 @@
 	};
 	grunticon.loadCSS = loadCSS;
 	grunticon.onloadCSS = onloadCSS;
-	window.grunticon = grunticon;
-}(this));
+	w.grunticon = grunticon;
+}(window));
