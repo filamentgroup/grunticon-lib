@@ -1,6 +1,6 @@
-# Grunticon-Lib [![Build Status](https://travis-ci.org/filamentgroup/grunticon-lib.png?branch=master)](https://travis-ci.org/filamentgroup/grunticon-lib)
+:warning: This project is archived and the repository is no longer maintained.
 
-[![Join the chat at https://gitter.im/filamentgroup/grunticon](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/filamentgroup/grunticon?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Grunticon-Lib [![Build Status](https://travis-ci.org/filamentgroup/grunticon-lib.png?branch=master)](https://travis-ci.org/filamentgroup/grunticon-lib)
 
 ```
          /'
